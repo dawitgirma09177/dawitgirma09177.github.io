@@ -1,739 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic and professional portfolio of Dawit Girma Buayu, Lecturer and Researcher in Water Resources Engineering at Wolkite University, Ethiopia.">
+  <title>Dawit Girma Buayu | Academic Portfolio</title>
 
-<title>Dawit Girma Buayu | Academic Portfolio</title>
-<meta name="description" content="Academic portfolio of Dawit Girma Buayu, Lecturer and Researcher in Water Resources Engineering at Wolkite University, Ethiopia.">
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- PDF GENERATION LIBRARY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
-
-<style>
-:root {
-    --primary: #163b65;
-    --secondary: #245b91;
-    --green: #28744d;
-    --light: #f3f6fa;
-    --dark: #263445;
-    --white: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
-    color: var(--dark);
-    background: var(--light);
-}
-
-header {
-    background: var(--primary);
-    color: white;
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.logo {
-    font-size: 19px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    max-width: 1100px;
-    width: 90%;
-    margin: auto;
-}
-
-/* PROFILE SECTION */
-
-.hero {
-    background: white;
-    padding: 55px 0;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    align-items: center;
-    gap: 35px;
-}
-
-.profile {
-    width: 210px;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 4px solid #e1e8f0;
-}
-
-.hero-text {
-    min-width: 0;
-}
-
-.hero h1 {
-    color: var(--primary);
-    font-size: 34px;
-    line-height: 1.2;
-    margin: 0 0 12px;
-}
-
-.hero h2 {
-    font-size: 19px;
-    margin: 0 0 15px;
-    color: var(--secondary);
-}
-
-.hero p {
-    margin-bottom: 20px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    white-space: nowrap;
-    min-height: 44px;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.button:hover {
-    background: var(--secondary);
-}
-
-.button.green {
-    background: var(--green);
-}
-
-.button.green:hover {
-    background: #1d5c3b;
-}
-
-/* CONTENT SECTIONS */
-
-section {
-    padding: 40px 0;
-}
-
-section:nth-child(even) {
-    background: white;
-}
-
-.section-title {
-    color: var(--primary);
-    font-size: 25px;
-    border-bottom: 3px solid var(--primary);
-    padding-bottom: 8px;
-    margin-bottom: 22px;
-}
-
-.card {
-    background: white;
-    padding: 22px;
-    border-radius: 9px;
-    margin-bottom: 18px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
-
-section:nth-child(even) .card {
-    background: var(--light);
-}
-
-h3 {
-    color: var(--secondary);
-    margin-top: 0;
-}
-
-.content-list {
-    padding-left: 22px;
-}
-
-.publication {
-    margin-bottom: 18px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #dce3eb;
-}
-
-.publication:last-child {
-    border-bottom: none;
-}
-
-.publication a,
-.contact-link {
-    color: var(--secondary);
-    overflow-wrap: anywhere;
-}
-
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 22px 10px;
-    font-size: 14px;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 700px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+  <style>
+    :root {
+      --navy: #10243a;
+      --blue: #174a75;
+      --teal: #0d9488;
+      --light: #f3f7fb;
+      --white: #ffffff;
+      --text: #263445;
+      --muted: #64748b;
+      --border: #e2e8f0;
     }
 
-    nav ul {
-        gap: 10px 15px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 16px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.15);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 13px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #10243a, #174a75);
+      color: white;
+      padding: 85px 7%;
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .profile {
-        margin: auto;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .hero h1 {
-        font-size: 27px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      color: #8ee3d7;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      color: #e2eaf3;
+      font-size: 16px;
     }
 
     .hero-buttons {
-        justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 14px;
+      background: var(--teal);
+      color: white;
+      border: 1px solid var(--teal);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #087c73;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: white;
+      color: white;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 35px 22px 70px;
+    }
+
+    section {
+      background: white;
+      padding: 32px;
+      margin: 25px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(15, 35, 55, .05);
+      scroll-margin-top: 85px;
     }
 
     .section-title {
-        font-size: 22px;
+      font-size: 25px;
+      color: var(--navy);
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--teal);
+      display: inline-block;
     }
-}
-</style>
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .item {
+      margin-bottom: 22px;
+      padding-left: 18px;
+      border-left: 3px solid var(--teal);
+    }
+
+    .item h3 {
+      color: var(--blue);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    ul.detail-list {
+      padding-left: 22px;
+      margin-top: 8px;
+    }
+
+    ul.detail-list li {
+      margin-bottom: 6px;
+    }
+
+    .research-grid,
+    .skills-grid,
+    .cert-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .research-card,
+    .skill-card,
+    .cert-card,
+    .contact-card {
+      border: 1px solid var(--border);
+      padding: 18px;
+      border-radius: 10px;
+      background: #fff;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .research-card:hover,
+    .skill-card:hover,
+    .cert-card:hover,
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 18px rgba(15, 35, 55, .09);
+    }
+
+    .research-card i,
+    .cert-card i {
+      font-size: 25px;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .skill-card {
+      text-align: center;
+    }
+
+    .skill-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      border-radius: 14px;
+      background: #e7f5f4;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+    }
+
+    .skill-icon .short-logo {
+      font-weight: bold;
+      font-size: 17px;
+      letter-spacing: -1px;
+    }
+
+    .skill-card h3 {
+      font-size: 15px;
+      color: var(--navy);
+    }
+
+    .skill-category {
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: bold;
+      margin: 24px 0 12px;
+    }
+
+    .publication {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .publication h3 {
+      font-size: 16px;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .publication p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .publication a {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .contact-card {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card i {
+      color: var(--teal);
+      font-size: 21px;
+      width: 25px;
+      text-align: center;
+      margin-top: 3px;
+    }
+
+    .contact-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .contact-card a,
+    .contact-card span {
+      font-size: 14px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 18px;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--navy);
+      color: #dbe6ef;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        position: static;
+      }
+
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 10px 15px;
+      }
+
+      .hero {
+        padding: 55px 7%;
+      }
+
+      section {
+        padding: 23px 18px;
+      }
+    }
+
+    @media print {
+      header, .hero-buttons, footer {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      main {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      section {
+        box-shadow: none;
+        break-inside: avoid;
+        margin: 12px 0;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <header>
-<nav>
-    <div class="logo">Dawit Girma Buayu</div>
-
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <nav>
+    <a href="#home" class="logo">Dawit Girma Buayu</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-</nav>
+  </nav>
 </header>
 
-<!-- PROFILE -->
-<div class="hero" id="about">
-<div class="container">
-<div class="hero-content">
+<!-- HOME -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h1>Dawit Girma Buayu</h1>
+    <h2>Lecturer and Researcher | Water Resources Engineering</h2>
+    <p>
+      Department of Civil Engineering, Wolkite University, Ethiopia.
+      I am a lecturer, researcher, and engineering professional specializing
+      in hydraulic engineering, hydrology, water resources management,
+      GIS, remote sensing, and engineering design.
+    </p>
 
-    <img class="profile"
-         src="profile.jpg"
-         alt="Dawit Girma Buayu"
-         onerror="this.style.display='none'">
-
-    <div class="hero-text">
-
-        <h1>Dawit Girma Buayu</h1>
-
-        <h2>Lecturer and Researcher | Water Resources Engineering</h2>
-
-        <p>
-        Department of Hydraulic and Water Resources Engineering, Wolkite University, Ethiopia.
-        Researcher and engineering professional specializing in hydrology,
-        hydraulic engineering, water resources management, GIS and remote
-        sensing applications.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a class="button" href="#publications">
-                View Publications
-            </a>
-
-            <a class="button" href="#contact">
-                Contact Me
-            </a>
-
-            <button class="button green"
-                    type="button"
-                    onclick="generateCV()">
-                ⬇ Download CV (PDF)
-            </button>
-
-        </div>
+    <div class="hero-buttons">
+      <a class="btn" href="#publications">View Publications</a>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
+      <button class="btn btn-outline" onclick="window.print()">
+        <i class="fa-solid fa-file-pdf"></i> Print / Save CV as PDF
+      </button>
     </div>
+  </div>
+</div>
 
-</div>
-</div>
-</div>
+<main>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p>
+    I am a Lecturer and Researcher at Wolkite University, Ethiopia,
+    with an academic background in Hydraulic and Water Resources Engineering
+    and Civil Engineering (Hydraulic Engineering). I hold a B.Sc. degree
+    in Hydraulic and Water Resources Engineering from Wollega University
+    and an M.Sc. degree in Civil Engineering (Hydraulic Engineering)
+    from Addis Ababa University.
+  </p>
+  <br>
+  <p>
+    My academic and professional interests include hydrological modeling,
+    water resources planning and management, climate change impacts,
+    groundwater assessment, flood risk management, irrigation engineering,
+    and geospatial applications. I also have practical engineering
+    experience in water supply and irrigation construction projects,
+    engineering design, site supervision, and construction management.
+  </p>
+</section>
 
 <!-- EDUCATION -->
 <section id="education">
-<div class="container">
+  <h2 class="section-title">Education</h2>
 
-<h2 class="section-title">Education</h2>
+  <div class="item">
+    <h3>M.Sc. in Civil Engineering (Hydraulic Engineering)</h3>
+    <p class="date">2021</p>
+    <p>Addis Ababa University, Ethiopia.</p>
+  </div>
 
-<div class="card">
-<h3>M.Sc. in Civil Engineering (Hydraulic Engineering)</h3>
-<p>Addis Ababa University, Ethiopia — 2021</p>
-</div>
-
-<div class="card">
-<h3>B.Sc. in Hydraulic and Water Resources Engineering</h3>
-<p>Wollega University, Ethiopia — 2016</p>
-</div>
-
-</div>
+  <div class="item">
+    <h3>B.Sc. in Hydraulic and Water Resources Engineering</h3>
+    <p class="date">2016</p>
+    <p>Wollega University, Ethiopia.</p>
+  </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research">
-<div class="container">
-
-<h2 class="section-title">Research Interests</h2>
-
-<div class="card">
-<ul class="content-list">
-<li>Hydrology and Hydrological Modeling</li>
-<li>Water Resources Management</li>
-<li>Climate Change and Water Resources</li>
-<li>Groundwater Resources Assessment</li>
-<li>Flood Risk Management</li>
-<li>Irrigation and Drainage Engineering</li>
-<li>GIS and Remote Sensing Applications</li>
-<li>Applications of Artificial Intelligence in Water Resources Planning and Management</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<!-- EXPERIENCE -->
+<!-- ACADEMIC EXPERIENCE -->
 <section id="experience">
-<div class="container">
+  <h2 class="section-title">Academic Experience</h2>
 
-<h2 class="section-title">Academic and Professional Experience</h2>
-
-<div class="card">
-<h3>Lecturer and Researcher — Wolkite University</h3>
-<p><strong>September 14, 2017 – Present</strong></p>
-<p>
-Teaching and research in Hydraulic and Water Resources Engineering,
-Civil Engineering, and Construction Technology and Management (COTM).
-</p>
-</div>
-
-<div class="card">
-<h3>Part-time Site and Office Engineer — GMN Water Works Construction Plc.</h3>
-<p><strong>March 01, 2022 – September 13, 2025</strong></p>
-<p>
-Engineering documentation, design review, AutoCAD drawings, engineering
-layouts, design calculations, BOQ preparation, cost estimates, material
-take-offs, site supervision, quality control and construction management.
-</p>
-</div>
-
-<div class="card">
-<h3>Part-time Site and Office Engineer — Etenesh Abebaw WWC</h3>
-<p><strong>January 02, 2017 – February 05, 2022</strong></p>
-<p>
-Worked on various water supply and irrigation projects, including
-engineering documentation, design review, quantity measurements,
-site supervision and technical problem-solving.
-</p>
-</div>
-
-</div>
+  <div class="item">
+    <h3>Lecturer and Researcher – Wolkite University</h3>
+    <p class="date">September 14, 2017 – Present</p>
+    <p>
+      Teaching and research activities in engineering and water resources
+      disciplines, with academic involvement in the following areas:
+    </p>
+    <ul class="detail-list">
+      <li>Hydraulic and Water Resources Engineering</li>
+      <li>Civil Engineering</li>
+      <li>Construction Technology and Management (COTM)</li>
+      <li>Research, academic advising, and scientific publication</li>
+    </ul>
+  </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-<div class="container">
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="professional-experience">
+  <h2 class="section-title">Professional Engineering Experience</h2>
 
-<h2 class="section-title">Technical and Professional Skills</h2>
+  <div class="item">
+    <h3>Site and Office Engineer – GMN Water Works Construction Plc.</h3>
+    <p class="date">March 01, 2022 – September 13, 2025 | Part-time</p>
+    <p>
+      Worked on water works construction projects involving engineering
+      documentation, design review, site supervision, technical coordination,
+      and construction management.
+    </p>
+  </div>
 
-<div class="card">
-<ul class="content-list">
-<li>Hydraulic and Water Resources Engineering</li>
-<li>Hydrological Analysis and Modeling</li>
-<li>GIS and Remote Sensing</li>
-<li>AutoCAD Drawings and Engineering Layouts</li>
-<li>Engineering Design Calculations</li>
-<li>Bill of Quantities (BOQ) Preparation</li>
-<li>Cost Estimation and Material Take-offs</li>
-<li>Site Supervision and Quality Control</li>
-<li>Construction Management and Coordination</li>
-<li>Technical Documentation and Problem-solving</li>
-</ul>
-</div>
+  <div class="item">
+    <h3>Site and Office Engineer – Etenesh Abebaw WWC</h3>
+    <p class="date">January 02, 2017 – February 05, 2022 | Part-time</p>
+    <p>
+      Participated in various water supply and irrigation projects,
+      supporting engineering design, office engineering, and site activities.
+    </p>
+  </div>
 
-</div>
+  <h3 class="skill-category">Key Engineering Responsibilities</h3>
+  <ul class="detail-list">
+    <li>Engineering documentation and design review</li>
+    <li>AutoCAD drawings and engineering layouts</li>
+    <li>Engineering design calculations</li>
+    <li>Preparation of Bills of Quantities (BOQ)</li>
+    <li>Cost estimation and material take-offs</li>
+    <li>Site supervision and quality control</li>
+    <li>Construction management and technical problem-solving</li>
+    <li>Quantity measurements and progress monitoring</li>
+    <li>Coordination with contractors, subcontractors, and suppliers</li>
+    <li>Ensuring compliance with engineering drawings and safety standards</li>
+  </ul>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <h2 class="section-title">Research Interests</h2>
+
+  <div class="research-grid">
+    <div class="research-card">
+      <i class="fa-solid fa-cloud-rain"></i>
+      <h3>Hydrology and Hydrological Modeling</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-water"></i>
+      <h3>Water Resources Management</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-temperature-high"></i>
+      <h3>Climate Change and Water Resources</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-droplet"></i>
+      <h3>Groundwater Resources</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-house-flood-water"></i>
+      <h3>Flood Risk Management</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-seedling"></i>
+      <h3>Irrigation and Drainage Engineering</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <h3>GIS and Remote Sensing Applications</h3>
+    </div>
+
+    <div class="research-card">
+      <i class="fa-solid fa-robot"></i>
+      <h3>AI Applications in Water Resources Planning and Management</h3>
+    </div>
+  </div>
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
-<div class="container">
+  <h2 class="section-title">Research Publications</h2>
+  <p class="section-intro">
+    Selected research publications and scientific contributions.
+  </p>
 
-<h2 class="section-title">Research Publications</h2>
+  <div class="publication">
+    <h3>
+      1. Performance evaluation of high-resolution multiple satellite
+      rainfall estimates for drought and flood monitoring in the
+      Omo-Gibe Basin, Ethiopia
+    </h3>
+    <p>H2Open Journal, 2026.</p>
+    <a href="https://doi.org/10.1016/j.htopen.2026.100014" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="card">
+  <div class="publication">
+    <h3>
+      2. Geospatial mapping of groundwater potential zones using
+      multi-criteria decision analysis and GIS fuzzy logic in
+      Dabus Sub-Basin, western Ethiopia
+    </h3>
+    <p>Quaternary Science Advances, 2025.</p>
+    <a href="https://doi.org/10.1016/j.qsa.2025.100275" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>1. Performance evaluation of high-resolution multiple satellite rainfall estimates for drought and flood monitoring in the Omo-Gibe Basin, Ethiopia.</strong>
-<p>H2Open Journal, 2026.</p>
-<a href="https://doi.org/10.1016/j.htopen.2026.100014" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      3. Identifying flood vulnerable and risk areas using the integration
+      of analytical hierarchy process (AHP), GIS, and remote sensing:
+      A case study of southern Oromia region
+    </h3>
+    <p>Urban Climate, 2023.</p>
+    <a href="https://doi.org/10.1016/j.uclim.2023.101640" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>2. Geospatial mapping of groundwater potential zones using multi-criteria decision analysis and GIS fuzzy logic in Dabus Sub-Basin, western Ethiopia.</strong>
-<p>Quaternary Science Advances, 2025.</p>
-<a href="https://doi.org/10.1016/j.qsa.2025.100275" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      4. Site Suitability Analysis for Surface Irrigation using GIS,
+      Remote Sensing, and Analytical Hierarchy Process (AHP)
+      Integration in Wama Watershed, Western Ethiopia
+    </h3>
+    <p>Hydrospatial Analysis, 2022.</p>
+    <a href="https://doi.org/10.21523/gcj3.2022060104" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>3. Identifying flood vulnerable and risk areas using the integration of analytical hierarchy process (AHP), GIS, and remote sensing: A case study of southern Oromia region.</strong>
-<p>2023.</p>
-<a href="https://doi.org/10.1016/j.uclim.2023.101640" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      5. Estimation of Soil Loss Rate Using RUSLE Model Integrated with
+      GIS and Remote Sensing Techniques: The Case of Wama Watershed,
+      Western Ethiopia
+    </h3>
+    <p>International Journal of Scientific Research and Innovative Studies (IJSRIS Journal), 2022.</p>
+    <a href="https://ijsrisjournal.com/index.php/ojsfiles/article/view/22"
+       target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>4. Site Suitability Analysis for Surface Irrigation using GIS, Remote Sensing, and Analytical Hierarchy Process (AHP) Integration in Wama Watershed, Western Ethiopia.</strong>
-<p>Hydrospatial Analysis, 2022.</p>
-<a href="https://doi.org/10.21523/gcj3.2022060104" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      6. Identification of Groundwater Potential Zones Using AHP,
+      GIS and RS Integration: A Case Study of Didessa Sub-Basin,
+      Western Ethiopia
+    </h3>
+    <p>2022.</p>
+    <a href="https://doi.org/10.21523/gcj1.2022060101" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>5. Estimation of Soil Loss Rate Using RUSLE Model Integrated with GIS and Remote Sensing Techniques: The Case of Wama Watershed, Western Ethiopia.</strong>
-<p>International Journal of Scientific Research and Innovative Studies, 2022.</p>
-<a href="https://ijsrisjournal.com/index.php/ojsfiles/article/view/22" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      7. Evaluation and Bias correction of Tropical Applications of
+      Meteorology using SATellite (TAMSAT) daily rainfall estimates
+      over the data-scarce region of Southern Ethiopia
+    </h3>
+    <p>Journal of Civil Engineering Research &amp; Technology, 2021.</p>
+    <a href="https://doi.org/10.47363/JCERT/2021(3)121" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>6. Identification of Groundwater Potential Zones Using AHP, GIS and RS Integration: A Case Study of Didessa Sub-Basin, Western Ethiopia.</strong>
-<p>2022.</p>
-<a href="https://doi.org/10.21523/gcj1.2022060101" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      8. Evaluation of the performance of high-resolution rainfall
+      products for stream flow Simulation
+    </h3>
+    <p>Journal of Civil &amp; Environmental Engineering, 2021.</p>
+    <a href="https://doi.org/10.37421/2165-784X.2021.11.383" target="_blank" rel="noopener">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> View Publication
+    </a>
+  </div>
 
-<div class="publication">
-<strong>7. Evaluation and Bias correction of Tropical Applications of Meteorology using SATellite (TAMSAT) daily rainfall estimates over the data-scarce region of Southern Ethiopia.</strong>
-<p>Journal of Civil Engineering Research &amp; Technology, 2021.</p>
-<a href="https://doi.org/10.47363/JCERT/2021(3)121" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <div class="publication">
+    <h3>
+      9. MCDA Approach for Identification of Rainwater Harvesting Site
+      in Drought Vulnerable Area of Genale Dawa River Basin,
+      Southern Ethiopia
+    </h3>
+    <p>Hydrospatial Analysis, 2025.</p>
+    <p class="note">
+      DOI/link can be added when the complete publication DOI is confirmed.
+    </p>
+  </div>
+</section>
 
-<div class="publication">
-<strong>8. Evaluation of the performance of high-resolution rainfall products for stream flow Simulation.</strong>
-<p>Journal of Civil &amp; Environmental Engineering, 2021.</p>
-<a href="https://doi.org/10.37421/2165-784X.2021.11.383" target="_blank" rel="noopener">View Publication</a>
-</div>
+<!-- TECHNICAL SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Technical and Professional Skills</h2>
+  <p class="section-intro">
+    Software, analytical tools, and engineering applications.
+  </p>
 
-<div class="publication">
-<strong>9. MCDA Approach for Identification of Rainwater Harvesting Site in Drought Vulnerable Area of Genale Dawa River Basin, Southern Ethiopia.</strong>
-<a href="https://doi.org/10.21523/gcj3" target="_blank" rel="noopener">View Publication</a>
-</div>
+  <h3 class="skill-category">Programming and Data Analysis</h3>
+  <div class="skills-grid">
 
-</div>
-</div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+      <h3>Python Programming</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><span class="short-logo">MAT</span></div>
+      <h3>MATLAB Programming</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-brands fa-r-project"></i></div>
+      <h3>R Programming</h3>
+    </div>
+
+  </div>
+
+  <h3 class="skill-category">GIS and Engineering Design</h3>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+      <h3>GIS</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+      <h3>AutoCAD</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><span class="short-logo">C3D</span></div>
+      <h3>Autodesk Civil 3D</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <h3>Microsoft Project</h3>
+    </div>
+
+  </div>
+
+  <h3 class="skill-category">Hydraulic and Water Resources Engineering</h3>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-water"></i></div>
+      <h3>Hydraulic Modeling Tools</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+      <h3>Water Supply Distribution and Irrigation System Design Tools</h3>
+    </div>
+
+  </div>
+
+  <h3 class="skill-category">Structural Engineering</h3>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-building"></i></div>
+      <h3>SAP2000</h3>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fa-solid fa-city"></i></div>
+      <h3>ETABS</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <h2 class="section-title">Certifications and Professional Development</h2>
+  <p class="section-intro">
+    Professional training and academic development programs.
+  </p>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <i class="fa-solid fa-language"></i>
+      <h3>English Language Improvement Program (ELIP)</h3>
+      <p>Wolkite University</p>
+      <p class="date">2025</p>
+    </div>
+
+    <div class="cert-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>Higher Diploma – Certified Professional Educator of Higher Education Institutions</h3>
+      <p>Wolkite University</p>
+      <p class="date">2025</p>
+    </div>
+
+    <div class="cert-card">
+      <i class="fa-solid fa-brain"></i>
+      <h3>Artificial Intelligence Fundamentals</h3>
+      <p>Udacity</p>
+      <p class="date">2024</p>
+    </div>
+
+    <div class="cert-card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Data Analysis Fundamentals</h3>
+      <p>Udacity</p>
+      <p class="date">2024</p>
+    </div>
+
+    <div class="cert-card">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <h3>Master Class for Teaching Online (Open edX)</h3>
+      <p>Arizona State University</p>
+      <p class="date">2025</p>
+    </div>
+
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<div class="container">
+  <h2 class="section-title">Contact Me</h2>
+  <p class="section-intro">
+    Feel free to contact me for academic collaboration, research,
+    professional networking, and engineering-related opportunities.
+  </p>
 
-<h2 class="section-title">Contact</h2>
+  <div class="contact-grid">
 
-<div class="card">
+    <div class="contact-card">
+      <i class="fa-solid fa-envelope"></i>
+      <div>
+        <strong>Professional Email</strong>
+        <a href="mailto:dawit.girma@wku.edu.et">dawit.girma@wku.edu.et</a>
+      </div>
+    </div>
 
-<p><strong>Name:</strong> Dawit Girma Buayu</p>
-<p><strong>Institution:</strong> Wolkite University, Ethiopia</p>
-<p><strong>Position:</strong> Lecturer and Researcher</p>
+    <div class="contact-card">
+      <i class="fa-solid fa-envelope"></i>
+      <div>
+        <strong>Alternative Email</strong>
+        <a href="mailto:davegirma63@gmail.com">davegirma63@gmail.com</a>
+      </div>
+    </div>
 
-<p>
-<strong>Professional Email:</strong>
-<a class="contact-link" href="mailto:dawit.girma@wku.edu.et">
-dawit.girma@wku.edu.et
-</a>
-</p>
+    <div class="contact-card">
+      <i class="fa-solid fa-phone"></i>
+      <div>
+        <strong>Phone Number</strong>
+        <a href="tel:+251917736107">+251 917 736 107</a>
+      </div>
+    </div>
 
-<p>
-<strong>Alternative Email:</strong>
-<a class="contact-link" href="mailto:davegirma63@gmail.com">
-davegirma63@gmail.com
-</a>
-</p>
+    <div class="contact-card">
+      <i class="fa-brands fa-linkedin"></i>
+      <div>
+        <strong>LinkedIn</strong>
+        <a href="https://www.linkedin.com/in/dawit-girma-burayu-68555a386"
+           target="_blank" rel="noopener">LinkedIn Profile</a>
+      </div>
+    </div>
 
-<p>
-<strong>GitHub:</strong>
-<a class="contact-link" href="https://github.com/dawitgirma09177" target="_blank" rel="noopener">
-github.com/dawitgirma09177
-</a>
-</p>
+    <div class="contact-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <div>
+        <strong>Google Scholar</strong>
+        <a href="https://scholar.google.com/citations?user=gbXfUQYAAAAJ&amp;hl=en"
+           target="_blank" rel="noopener">Google Scholar Profile</a>
+      </div>
+    </div>
 
-</div>
-</div>
+    <div class="contact-card">
+      <i class="fa-brands fa-researchgate"></i>
+      <div>
+        <strong>ResearchGate</strong>
+        <a href="https://www.researchgate.net/profile/Dawit-Girma-3?ev=hdr_xprf"
+           target="_blank" rel="noopener">ResearchGate Profile</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-brands fa-telegram"></i>
+      <div>
+        <strong>Telegram</strong>
+        <a href="https://t.me/davewku" target="_blank" rel="noopener">@davewku</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <i class="fa-brands fa-whatsapp"></i>
+      <div>
+        <strong>WhatsApp</strong>
+        <a href="https://wa.me/251917736107"
+           target="_blank" rel="noopener">@Dawitgirmaburayu</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="note">
+    Wolkite University, Ethiopia.
+  </p>
 </section>
 
+</main>
+
 <footer>
-<p>© 2026 Dawit Girma Buayu | Academic Portfolio</p>
-<p>Wolkite University, Ethiopia</p>
+  <p>
+    &copy; <span id="year"></span> Dawit Girma Buayu.
+    All Rights Reserved.
+  </p>
+  <p>Academic Portfolio | Water Resources Engineering</p>
 </footer>
 
-<!-- AUTOMATIC CV PDF GENERATOR -->
 <script>
-function generateCV() {
-
-    if (!window.jspdf || !window.jspdf.jsPDF) {
-        alert("The PDF library could not load. Please check your internet connection and try again.");
-        return;
-    }
-
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF("p", "mm", "a4");
-
-    const left = 18;
-    const width = 174;
-    const pageHeight = 297;
-    const bottomMargin = 18;
-    let y = 20;
-
-    function checkPage(heightNeeded) {
-        if (y + heightNeeded > pageHeight - bottomMargin) {
-            pdf.addPage();
-            y = 20;
-        }
-    }
-
-    function heading(text) {
-        checkPage(14);
-        y += 4;
-        pdf.setFont("helvetica", "bold");
-        pdf.setFontSize(12);
-        pdf.setTextColor(22, 59, 101);
-        pdf.text(text, left, y);
-        y += 3;
-        pdf.setDrawColor(36, 91, 145);
-        pdf.line(left, y, 192, y);
-        y += 6;
-    }
-
-    function paragraph(text, size = 9) {
-        pdf.setFont("helvetica", "normal");
-        pdf.setFontSize(size);
-        pdf.setTextColor(40, 52, 69);
-
-        const lines = pdf.splitTextToSize(text, width);
-        const lineHeight = size * 0.48 + 1.5;
-
-        lines.forEach(line => {
-            checkPage(lineHeight);
-            pdf.text(line, left, y);
-            y += lineHeight;
-        });
-
-        y += 2;
-    }
-
-    function boldParagraph(title, detail) {
-        checkPage(14);
-        pdf.setFont("helvetica", "bold");
-        pdf.setFontSize(9);
-        pdf.setTextColor(38, 52, 69);
-
-        const titleLines = pdf.splitTextToSize(title, width);
-        titleLines.forEach(line => {
-            checkPage(5);
-            pdf.text(line, left, y);
-            y += 5;
-        });
-
-        if (detail) {
-            paragraph(detail, 8.5);
-        }
-    }
-
-    // NAME
-    pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(20);
-    pdf.setTextColor(22, 59, 101);
-    pdf.text("DAWIT GIRMA BUAYU", left, y);
-    y += 8;
-
-    pdf.setFont("helvetica", "bold");
-    pdf.setFontSize(10);
-    pdf.setTextColor(36, 91, 145);
-    pdf.text("Lecturer and Researcher | Water Resources Engineering", left, y);
-    y += 7;
-
-    paragraph(
-        "Department of Civil Engineering, Wolkite University, Ethiopia\n" +
-        "Professional email: dawit.girma@wku.edu.et\n" +
-        "Alternative email: davegirma63@gmail.com\n" +
-        "Academic portfolio: https://dawitgirma09177.github.io",
-        8
-    );
-
-    heading("PROFESSIONAL PROFILE");
-    paragraph(
-        "Lecturer and researcher at Wolkite University, Ethiopia, with an M.Sc. " +
-        "in Civil Engineering (Hydraulic Engineering). Research and professional " +
-        "interests include hydrology, hydrological modelling, hydraulic engineering, " +
-        "water resources management, climate change and water resources, groundwater, " +
-        "flood risk management, irrigation and drainage engineering, GIS and remote " +
-        "sensing, and applications of artificial intelligence in water resources planning."
-    );
-
-    heading("EDUCATION");
-    boldParagraph(
-        "M.Sc. in Civil Engineering (Hydraulic Engineering)",
-        "Addis Ababa University, Ethiopia — 2021."
-    );
-    boldParagraph(
-        "B.Sc. in Hydraulic and Water Resources Engineering",
-        "Wollega University, Ethiopia — 2016."
-    );
-
-    heading("ACADEMIC APPOINTMENT");
-    boldParagraph(
-        "Lecturer and Researcher — Wolkite University, Ethiopia",
-        "September 14, 2017 – Present. Teaching and research in Hydraulic and Water Resources Engineering, Civil Engineering, and Construction Technology and Management (COTM)."
-    );
-
-    heading("PROFESSIONAL ENGINEERING EXPERIENCE");
-    boldParagraph(
-        "Part-time Site and Office Engineer — GMN Water Works Construction Plc.",
-        "March 01, 2022 – September 13, 2025."
-    );
-    boldParagraph(
-        "Part-time Site and Office Engineer — Etenesh Abebaw WWC",
-        "January 02, 2017 – February 05, 2022."
-    );
-    paragraph(
-        "Professional experience includes engineering documentation, design review, " +
-        "AutoCAD drawings, engineering layouts, design calculations, preparation of " +
-        "Bills of Quantities (BOQ), cost estimates, material take-offs, site supervision, " +
-        "quality control, construction management, technical problem-solving, quantity " +
-        "measurements, and coordination with contractors, subcontractors and suppliers."
-    );
-
-    heading("RESEARCH INTERESTS");
-
-    [
-        "Hydrology and Hydrological Modeling",
-        "Water Resources Management",
-        "Climate Change and Water Resources",
-        "Groundwater",
-        "Flood Risk Management",
-        "Irrigation and Drainage Engineering",
-        "GIS and Remote Sensing Applications",
-        "Applications of AI in Water Resources Planning and Management"
-    ].forEach(function(value) {
-        paragraph("• " + value, 9);
-    });
-
-    heading("TECHNICAL AND PROFESSIONAL SKILLS");
-    paragraph(
-        "Hydraulic and water resources engineering; hydrological analysis and modelling; " +
-        "GIS and remote sensing; AutoCAD drawings and engineering layouts; engineering " +
-        "design calculations; BOQ preparation; cost estimation; material take-offs; " +
-        "site supervision; quality control; construction management; technical documentation."
-    );
-
-    heading("RESEARCH PUBLICATIONS");
-
-    const publications = [
-        "Performance evaluation of high-resolution multiple satellite rainfall estimates for drought and flood monitoring in the Omo-Gibe Basin, Ethiopia. H2Open Journal, 2026. https://doi.org/10.1016/j.htopen.2026.100014",
-        "Geospatial mapping of groundwater potential zones using multi-criteria decision analysis and GIS fuzzy logic in Dabus Sub-Basin, western Ethiopia. Quaternary Science Advances, 2025. https://doi.org/10.1016/j.qsa.2025.100275",
-        "MCDA Approach for Identification of Rainwater Harvesting Site in Drought Vulnerable Area of Genale Dawa River Basin, Southern Ethiopia. Hydrospatial Analysis, 2025. DOI requires verification.",
-        "Identifying flood vulnerable and risk areas using the integration of analytical hierarchy process (AHP), GIS, and remote sensing: A case study of southern Oromia region. 2023. https://doi.org/10.1016/j.uclim.2023.101640",
-        "Site Suitability Analysis for Surface Irrigation using GIS, Remote Sensing, and Analytical Hierarchy Process (AHP) Integration in Wama Watershed, Western Ethiopia. Hydrospatial Analysis, 2022. https://doi.org/10.21523/gcj3.2022060104",
-        "Estimation of Soil Loss Rate Using RUSLE Model Integrated with GIS and Remote Sensing Techniques: The Case of Wama Watershed, Western Ethiopia. International Journal of Scientific Research and Innovative Studies, 2022. https://ijsrisjournal.com/index.php/ojsfiles/article/view/22",
-        "Identification of Groundwater Potential Zones Using AHP, GIS and RS Integration: A Case Study of Didessa Sub-Basin, Western Ethiopia. 2022. https://doi.org/10.21523/gcj1.2022060101",
-        "Evaluation and Bias correction of Tropical Applications of Meteorology using SATellite (TAMSAT) daily rainfall estimates over the data-scarce region of Southern Ethiopia. Journal of Civil Engineering Research & Technology, 2021. https://doi.org/10.47363/JCERT/2021(3)121",
-        "Evaluation of the performance of high-resolution rainfall products for stream flow Simulation. Journal of Civil & Environmental Engineering, 2021. https://doi.org/10.37421/2165-784X.2021.11.383"
-    ];
-
-    publications.forEach(function(publication, index) {
-        paragraph((index + 1) + ". " + publication, 8);
-    });
-
-    heading("REFERENCES");
-    paragraph("Professional references are available upon request.");
-
-    // PAGE NUMBERS
-    const totalPages = pdf.internal.getNumberOfPages();
-
-    for (let page = 1; page <= totalPages; page++) {
-        pdf.setPage(page);
-        pdf.setFont("helvetica", "normal");
-        pdf.setFontSize(8);
-        pdf.setTextColor(100, 100, 100);
-        pdf.text(
-            "Dawit Girma Buayu | Academic CV | Page " + page + " of " + totalPages,
-            18,
-            289
-        );
-    }
-
-    // DOWNLOAD THE GENERATED PDF
-    pdf.save("Dawit_Girma_Buayu_CV.pdf");
-}
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
