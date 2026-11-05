@@ -6,17 +6,15 @@
 
 <title>Dawit Girma Buayu | Academic Portfolio</title>
 
-<meta name="description" content="Academic and professional portfolio of Dawit Girma Buayu, Lecturer and Researcher in Water Resources Engineering at Wolkite University, Ethiopia.">
+<meta name="description" content="Academic portfolio of Dawit Girma Buayu, Lecturer and Researcher in Water Resources Engineering at Wolkite University, Ethiopia.">
 
 <style>
 :root {
-  --navy: #123047;
+  --navy: #102b46;
   --blue: #176b87;
-  --light-blue: #eaf3f7;
-  --background: #f5f8fa;
-  --white: #ffffff;
+  --background: #f4f7fa;
   --text: #293744;
-  --muted: #647582;
+  --white: #ffffff;
 }
 
 * {
@@ -31,140 +29,163 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
   background: var(--background);
   color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* NAVIGATION */
 
 header {
+  width: 100%;
   background: var(--navy);
-  padding: 15px 6%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 15px 5%;
 }
 
 nav {
   max-width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
 }
 
 .logo {
   color: white;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 nav ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  list-style: none;
 }
 
-nav a {
+nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 14px;
 }
 
-nav a:hover {
+nav ul li a:hover {
   color: #a9d9eb;
 }
 
-/* HERO / PROFILE SECTION */
+/* PROFILE SECTION */
 
 .hero {
-  background: linear-gradient(135deg, #123047, #176b87);
+  width: 100%;
+  background: linear-gradient(120deg, #102b46, #176b87);
   color: white;
-  padding: 70px 6%;
+  padding: 70px 5%;
 }
 
 .hero-content {
   max-width: 1150px;
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
   align-items: center;
-  justify-content: flex-start;
   gap: 45px;
-  flex-wrap: nowrap;
 }
 
 .profile {
-  width: 210px;
-  height: 210px;
-  min-width: 210px;
+  width: 220px;
+  height: 220px;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  display: block;
-  flex-shrink: 0;
   border: 5px solid white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 }
 
 .hero-text {
-  flex: 1;
+  width: 100%;
   min-width: 0;
-  color: white;
   display: block;
+  color: white;
+  overflow: visible;
 }
 
 .hero-text h1 {
+  display: block;
   color: white;
   font-size: 38px;
   line-height: 1.3;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hero-text h2 {
+  display: block;
   color: #d8edf5;
   font-size: 21px;
   font-weight: normal;
+  line-height: 1.5;
   margin-bottom: 15px;
 }
 
 .hero-text p {
+  display: block;
   color: white;
-  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 22px;
   background: white;
-  color: var(--navy);
-  padding: 10px 22px;
-  border-radius: 5px;
+  color: #102b46;
+  border-radius: 6px;
   text-decoration: none;
+  font-size: 15px;
   font-weight: bold;
-  margin: 5px 8px 5px 0;
+  white-space: nowrap;
+  text-align: center;
+  border: 2px solid white;
 }
 
 .button:hover {
   background: #d8edf5;
+  color: #102b46;
 }
 
 /* MAIN CONTENT */
 
 main {
+  width: 100%;
   max-width: 1100px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 35px 20px;
 }
 
 section {
+  width: 100%;
   background: white;
   padding: 30px;
   margin-bottom: 25px;
   border-radius: 9px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.05);
-  scroll-margin-top: 90px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  scroll-margin-top: 30px;
 }
 
 section h2 {
@@ -186,21 +207,22 @@ p {
 }
 
 ul, ol {
-  padding-left: 24px;
+  padding-left: 25px;
 }
 
 li {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .publication-list li {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .publication-list a,
 .contact-links a {
   color: var(--blue);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .publication-list a:hover,
@@ -209,41 +231,44 @@ li {
 }
 
 .date {
-  color: var(--muted);
+  color: #647582;
   font-size: 14px;
 }
+
+/* FOOTER */
 
 footer {
   background: var(--navy);
   color: white;
   text-align: center;
   padding: 25px 15px;
-  margin-top: 30px;
 }
 
-/* MOBILE RESPONSIVE DESIGN */
+/* MOBILE RESPONSIVE */
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
 
   header {
-    position: static;
+    position: relative;
   }
 
   nav {
+    flex-direction: column;
     justify-content: center;
   }
 
   nav ul {
     justify-content: center;
+    gap: 12px;
   }
 
   .hero {
-    padding: 45px 6%;
+    padding: 45px 20px;
   }
 
   .hero-content {
-    flex-direction: column;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    justify-items: center;
     text-align: center;
     gap: 25px;
   }
@@ -251,7 +276,6 @@ footer {
   .profile {
     width: 180px;
     height: 180px;
-    min-width: 180px;
   }
 
   .hero-text {
@@ -266,10 +290,24 @@ footer {
     font-size: 18px;
   }
 
+  .hero-buttons {
+    justify-content: center;
+  }
+
   section {
     padding: 22px;
   }
+}
 
+@media screen and (max-width: 380px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
 }
 
 </style>
@@ -280,29 +318,30 @@ footer {
 <!-- NAVIGATION -->
 
 <header>
-  <nav>
-    <div class="logo">Dawit Girma Buayu</div>
+<nav>
+  <div class="logo">Dawit Girma Buayu</div>
 
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 </header>
 
-<!-- PROFILE AND INTRODUCTION -->
+<!-- PROFILE SECTION -->
 
 <div class="hero">
+
   <div class="hero-content">
 
     <img
-      src="profile.jpg"
-      alt="Dawit Girma Buayu"
       class="profile"
+      src="./profile.jpg"
+      alt="Dawit Girma Buayu"
     >
 
     <div class="hero-text">
@@ -318,17 +357,27 @@ footer {
         GIS and remote sensing applications.
       </p>
 
-      <a href="#publications" class="button">View Publications</a>
+      <div class="hero-buttons">
 
-      <a href="#contact" class="button">Contact Me</a>
+        <a class="button" href="#publications">
+          View Publications
+        </a>
+
+        <a class="button" href="#contact">
+          Contact Me
+        </a>
+
+      </div>
 
     </div>
+
   </div>
+
 </div>
 
 <main>
 
-<!-- ABOUT ME -->
+<!-- ABOUT -->
 
 <section id="about">
 
@@ -336,8 +385,8 @@ footer {
 
 <p>
 I am Dawit Girma Buayu, a Lecturer and Researcher at Wolkite
-University, Ethiopia. I specialize in Water Resources Engineering
-and hold an M.Sc. degree in Civil Engineering (Hydraulic Engineering)
+University, Ethiopia, specializing in Water Resources Engineering.
+I hold an M.Sc. degree in Civil Engineering (Hydraulic Engineering)
 from Addis Ababa University and a B.Sc. degree in Hydraulic and
 Water Resources Engineering from Wollega University.
 </p>
@@ -345,15 +394,13 @@ Water Resources Engineering from Wollega University.
 <p>
 My academic and professional experience includes university
 teaching, scientific research, engineering design, water supply
-projects and irrigation development. I am interested in applying
-engineering principles, hydrological analysis and geospatial
-technologies to address water-related challenges.
+projects and irrigation development.
 </p>
 
 <p>
-My professional goal is to contribute to sustainable water
-resources development, academic excellence, research innovation
-and climate-resilient water management.
+My research focuses on sustainable water resources development,
+hydrological modeling, climate resilience, groundwater assessment,
+flood risk management and geospatial technologies.
 </p>
 
 </section>
@@ -374,7 +421,7 @@ and climate-resilient water management.
 
 </section>
 
-<!-- RESEARCH INTERESTS -->
+<!-- RESEARCH -->
 
 <section id="research">
 
@@ -393,16 +440,14 @@ and climate-resilient water management.
 
 </section>
 
-<!-- PROFESSIONAL EXPERIENCE -->
+<!-- EXPERIENCE -->
 
 <section id="experience">
 
 <h2>Academic and Professional Experience</h2>
 
 <h3>Lecturer and Researcher</h3>
-
 <p><strong>Wolkite University, Ethiopia</strong></p>
-
 <p class="date">September 14, 2017 – Present</p>
 
 <p>
@@ -412,9 +457,7 @@ Management (COTM).
 </p>
 
 <h3>Part-time Site and Office Engineer</h3>
-
 <p><strong>GMN Water Works Construction Plc.</strong></p>
-
 <p class="date">March 01, 2022 – September 13, 2025</p>
 
 <p>
@@ -425,9 +468,7 @@ supervision and project coordination.
 </p>
 
 <h3>Part-time Site and Office Engineer</h3>
-
 <p><strong>Etenesh Abebaw WWC</strong></p>
-
 <p class="date">January 02, 2017 – February 05, 2022</p>
 
 <p>
@@ -469,9 +510,8 @@ Omo-Gibe Basin, Ethiopia.
 <br>
 H2Open Journal, 2026.
 <br>
-<a href="https://doi.org/10.1016/j.htopen.2026.100014" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.1016/j.htopen.2026.100014"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -483,9 +523,8 @@ Dabus Sub-Basin, western Ethiopia.
 <br>
 Quaternary Science Advances, 2025.
 <br>
-<a href="https://doi.org/10.1016/j.qsa.2025.100275" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.1016/j.qsa.2025.100275"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -497,9 +536,8 @@ A case study of southern Oromia region.
 <br>
 2023.
 <br>
-<a href="https://doi.org/10.1016/j.uclim.2023.101640" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.1016/j.uclim.2023.101640"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -511,9 +549,8 @@ Integration in Wama Watershed, Western Ethiopia.
 <br>
 Hydrospatial Analysis, 2022.
 <br>
-<a href="https://doi.org/10.21523/gcj3.2022060104" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.21523/gcj3.2022060104"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -526,9 +563,8 @@ Watershed, Western Ethiopia.
 International Journal of Scientific Research and Innovative
 Studies (IJSRIS Journal), 2022.
 <br>
-<a href="https://ijsrisjournal.com/index.php/ojsfiles/article/view/22" target="_blank" rel="noopener">
-View Publication
-</a>
+<a href="https://ijsrisjournal.com/index.php/ojsfiles/article/view/22"
+target="_blank" rel="noopener">View Publication</a>
 </li>
 
 <li>
@@ -540,9 +576,8 @@ Western Ethiopia.
 <br>
 2022.
 <br>
-<a href="https://doi.org/10.21523/gcj1.2022060101" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.21523/gcj1.2022060101"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -552,11 +587,10 @@ of Meteorology using SATellite (TAMSAT) daily rainfall
 estimates over the data-scarce region of Southern Ethiopia.
 </strong>
 <br>
-Journal of Civil Engineering Research & Technology, 2021.
+Journal of Civil Engineering Research &amp; Technology, 2021.
 <br>
-<a href="https://doi.org/10.47363/JCERT/2021(3)121" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.47363/JCERT/2021(3)121"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -565,11 +599,10 @@ Evaluation of the performance of high-resolution rainfall
 products for stream flow Simulation.
 </strong>
 <br>
-Journal of Civil & Environmental Engineering, 2021.
+Journal of Civil &amp; Environmental Engineering, 2021.
 <br>
-<a href="https://doi.org/10.37421/2165-784X.2021.11.383" target="_blank" rel="noopener">
-View Publication (DOI)
-</a>
+<a href="https://doi.org/10.37421/2165-784X.2021.11.383"
+target="_blank" rel="noopener">View Publication (DOI)</a>
 </li>
 
 <li>
@@ -581,7 +614,7 @@ Southern Ethiopia.
 <br>
 Hydrospatial Analysis, 2025.
 <br>
-<span class="date">Publication link/DOI to be added after verification.</span>
+<span class="date">Publication DOI/link to be added after verification.</span>
 </li>
 
 </ol>
@@ -623,7 +656,8 @@ Wolkite University, Ethiopia
 
 <p>
 <strong>GitHub:</strong>
-<a href="https://github.com/dawitgirma09177" target="_blank" rel="noopener">
+<a href="https://github.com/dawitgirma09177"
+target="_blank" rel="noopener">
 github.com/dawitgirma09177
 </a>
 </p>
@@ -637,13 +671,8 @@ github.com/dawitgirma09177
 <!-- FOOTER -->
 
 <footer>
-
-<p>
-&copy; 2026 Dawit Girma Buayu. Academic Portfolio.
-</p>
-
+<p>&copy; 2026 Dawit Girma Buayu. Academic Portfolio.</p>
 <p>Wolkite University, Ethiopia</p>
-
 </footer>
 
 </body>
