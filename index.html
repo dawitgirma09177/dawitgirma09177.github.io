@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic portfolio of a Water Resources Engineer, Lecturer and Researcher at Wolkite University.">
+  <title>Academic Portfolio | Water Resources Engineer</title>
+
+  <style>
+    :root {
+      --navy: #102b46;
+      --blue: #1c5278;
+      --gold: #c49a50;
+      --light: #f4f7fa;
+      --white: #ffffff;
+      --text: #344457;
+      --muted: #718096;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 17px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 12px #0002;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span { color: var(--gold); }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      font-size: 13px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      background: linear-gradient(120deg, #102b46, #1c5278);
+      color: white;
+      padding: 105px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 45px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content { max-width: 720px; }
+
+    .hero-label {
+      color: #e6c78f;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 57px);
+      line-height: 1.2;
+      margin: 20px 0;
+    }
+
+    .hero h1 span { color: #e6c78f; }
+
+    .hero p {
+      font-size: 17px;
+      color: #e0e9f1;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .hero-mark {
+      width: 190px;
+      height: 190px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+      background: #ffffff12;
+    }
+
+    section { padding: 75px 8%; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: var(--navy);
+      font-size: 30px;
+      margin-bottom: 9px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .underline {
+      width: 55px;
+      height: 3px;
+      background: var(--gold);
+      margin: 12px auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      padding: 27px;
+      border-radius: 9px;
+      box-shadow: 0 5px 20px #102b460c;
+    }
+
+    .panel h3 {
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid #edf0f3;
+    }
+
+    .info-list strong { color: var(--navy); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 9px;
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 5px 20px #102b460c;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .card p { font-size: 14px; }
+
+    .card-icon {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .skill {
+      background: white;
+      color: var(--navy);
+      padding: 10px 17px;
+      border-radius: 5px;
+      border: 1px solid #dce4eb;
+      font-size: 14px;
+    }
+
+    .dark-section {
+      background: var(--navy);
+      color: white;
+    }
+
+    .dark-section .section-title h2 { color: white; }
+    .dark-section .section-title p { color: #c4d2df; }
+
+    .dark-section .card { color: var(--text); }
+
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 4px solid var(--gold);
+      padding: 22px 25px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .timeline-item h3 { color: var(--navy); }
+
+    .timeline-item small {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .placeholder {
+      color: #8b969f;
+      font-style: italic;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: white;
+      padding: 35px;
+      border-radius: 9px;
+    }
+
+    .contact-box a {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0a2035;
+      color: #d6e0e9;
+      font-size: 13px;
+    }
+
+    @media(max-width: 750px) {
+      nav { justify-content: center; }
+      nav ul { justify-content: center; gap: 12px; }
+      .hero { text-align: center; justify-content: center; padding: 70px 7%; }
+      .hero-buttons { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      section { padding: 55px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="#home">Academic<span>Portfolio</span></a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-label">Academic | Researcher | Engineer</div>
+
+    <h1>Hello, I'm <span>[Your Full Name]</span></h1>
+
+    <p>
+      Lecturer and Researcher in Water Resources Engineering
+      at Wolkite University, Ethiopia. I am passionate about
+      teaching, scientific research, sustainable water resources
+      management, and engineering practice.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-gold">Explore My Profile</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+
+  <div class="hero-mark">WR</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <h2>About Me</h2>
+    <div class="underline"></div>
+    <p>Academic background and professional profile</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="panel">
+      <h3>Professional Biography</h3>
+      <p>
+        I am a Water Resources Engineer, Lecturer, and Researcher
+        at Wolkite University, Ethiopia. My professional interests
+        combine university teaching, applied research, and
+        engineering practice in water resources development
+        and management.
+      </p>
+      <br>
+      <p>
+        In addition to my academic responsibilities, I have
+        practical office and site engineering experience,
+        including engineering documentation, design review,
+        technical drawings, quantity estimation, construction
+        supervision, and quality control.
+      </p>
+      <br>
+      <p>
+        My professional goal is to contribute to knowledge
+        development, engineering innovation, and sustainable
+        water resources solutions.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>Profile Information</h3>
+      <ul class="info-list">
+        <li><strong>Name:</strong> [Your Full Name]</li>
+        <li><strong>Position:</strong> Lecturer and Researcher</li>
+        <li><strong>Institution:</strong> Wolkite University</li>
+        <li><strong>Field:</strong> Water Resources Engineering</li>
+        <li><strong>Country:</strong> Ethiopia</li>
+        <li><strong>Email:</strong> [Your Email]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="dark-section">
+  <div class="section-title">
+    <h2>Education & Qualifications</h2>
+    <div class="underline"></div>
+    <p>Academic development and qualifications</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>[Highest Academic Degree]</h3>
+      <small>[University] | [Year]</small>
+      <p class="placeholder">Add your degree, specialization and thesis title.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>[Previous Academic Degree]</h3>
+      <small>[University] | [Year]</small>
+      <p class="placeholder">Add your academic qualifications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-title">
+    <h2>Teaching Experience</h2>
+    <div class="underline"></div>
+    <p>University teaching and academic contributions</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h3>University Teaching</h3>
+      <p>Teaching and supporting students in engineering and water resources subjects.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <h3>Student Mentoring</h3>
+      <p>Academic guidance, student support, and research supervision where applicable.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📝</div>
+      <h3>Academic Development</h3>
+      <p>Course preparation, instructional materials, assessment, and continuous learning.</p>
+    </div>
+  </div>
+  <p class="placeholder" style="text-align:center;margin-top:20px;">
+    Add your actual courses, teaching years and responsibilities.
+  </p>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="dark-section">
+  <div class="section-title">
+    <h2>Research Interests</h2>
+    <div class="underline"></div>
+    <p>Areas of academic and scientific interest</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Water Resources Management</h3>
+      <p>Sustainable planning, development, allocation, and management of water resources.</p>
+    </div>
+    <div class="card">
+      <h3>Hydrology</h3>
+      <p>Hydrological processes, watershed assessment, and water availability.</p>
+    </div>
+    <div class="card">
+      <h3>Hydraulic Engineering</h3>
+      <p>Hydraulic systems, water infrastructure, and engineering analysis.</p>
+    </div>
+    <div class="card">
+      <h3>Water Supply & Irrigation</h3>
+      <p>Water supply systems, irrigation development, and sustainable water use.</p>
+    </div>
+    <div class="card">
+      <h3>Watershed Management</h3>
+      <p>Integrated watershed management, conservation, and sustainable development.</p>
+    </div>
+    <div class="card">
+      <h3>Climate & Water</h3>
+      <p>Climate variability, water availability, and water-related environmental challenges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section id="skills">
+  <div class="section-title">
+    <h2>Technical Skills</h2>
+    <div class="underline"></div>
+    <p>Academic, design, and engineering competencies</p>
+  </div>
+
+  <div class="skills">
+    <span class="skill">Water Resources Engineering</span>
+    <span class="skill">Engineering Documentation</span>
+    <span class="skill">Design Review</span>
+    <span class="skill">AutoCAD Drawings</span>
+    <span class="skill">Engineering Layouts</span>
+    <span class="skill">Design Calculations</span>
+    <span class="skill">Bills of Quantities (BOQ)</span>
+    <span class="skill">Cost Estimation</span>
+    <span class="skill">Material Take-offs</span>
+    <span class="skill">Site Supervision</span>
+    <span class="skill">Quality Control</span>
+    <span class="skill">Construction Management</span>
+    <span class="skill">Technical Problem-solving</span>
+    <span class="skill">Quantity Measurements</span>
+  </div>
+</section>
+
+<!-- ENGINEERING EXPERIENCE -->
+<section id="experience" class="dark-section">
+  <div class="section-title">
+    <h2>Professional Engineering Experience</h2>
+    <div class="underline"></div>
+    <p>Practical office and construction site experience</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">📐</div>
+      <h3>Office Engineering</h3>
+      <ul>
+        <li>Engineering documentation</li>
+        <li>Design review</li>
+        <li>AutoCAD drawings and layouts</li>
+        <li>Engineering design calculations</li>
+        <li>Bill of Quantities preparation</li>
+        <li>Cost estimation</li>
+        <li>Material take-offs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏗️</div>
+      <h3>Site Engineering</h3>
+      <ul>
+        <li>Construction site supervision</li>
+        <li>Quality control</li>
+        <li>Construction management</li>
+        <li>Technical problem-solving</li>
+        <li>Quantity measurements</li>
+        <li>Construction progress monitoring</li>
+      </ul>
+    </div>
+  </div>
+  <p class="placeholder" style="text-align:center;margin-top:20px;">
+    Add your employers, project names, positions and employment dates.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title">
+    <h2>Research & Engineering Projects</h2>
+    <div class="underline"></div>
+    <p>Selected academic and professional work</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>[Research Project Title]</h3>
+      <p class="placeholder">Add project description, objectives, methods and outcomes.</p>
+    </div>
+    <div class="card">
+      <h3>[Engineering Project Title]</h3>
+      <p class="placeholder">Add your role, project location, responsibilities and achievements.</p>
+    </div>
+    <div class="card">
+      <h3>[Academic Project Title]</h3>
+      <p class="placeholder">Add research or academic project information.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="dark-section">
+  <div class="section-title">
+    <h2>Research Publications</h2>
+    <div class="underline"></div>
+    <p>Journal articles, conference papers and scholarly work</p>
+  </div>
+
+  <div class="panel">
+    <h3>Selected Publications</h3>
+    <p class="placeholder">
+      Add your published research articles, authors, publication
+      year, journal name, DOI and publication links here.
+    </p>
+    <br>
+    <p>
+      <strong>Google Scholar:</strong>
+      <a href="#" style="color:#1c5278;">Add your profile link</a>
+    </p>
+    <p>
+      <strong>ORCID:</strong>
+      <a href="#" style="color:#1c5278;">Add your ORCID link</a>
+    </p>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="section-title">
+    <h2>Curriculum Vitae</h2>
+    <div class="underline"></div>
+    <p>Academic and professional background</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>My Academic CV</h3>
+    <p>
+      Access my detailed academic qualifications, teaching
+      experience, research activities, publications and
+      professional engineering experience.
+    </p>
+    <br>
+    <a href="assets/cv.pdf" class="btn btn-gold" download>
+      Download Academic CV
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="dark-section">
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <div class="underline"></div>
+    <p>Academic collaboration, research and professional inquiries</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>[Your Full Name]</h3>
+    <p>Lecturer and Researcher | Water Resources Engineering</p>
+    <p>Wolkite University, Ethiopia</p>
+    <br>
+    <p>Email: <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+    <p>LinkedIn: <a href="#">Add your LinkedIn profile</a></p>
+    <p>Google Scholar: <a href="#">Add your Scholar profile</a></p>
+    <p>ORCID: <a href="#">Add your ORCID profile</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © <span id="year"></span> [Your Full Name].
+    Academic & Professional Portfolio.
+  </p>
+  <p>Wolkite University | Ethiopia</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
