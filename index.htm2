@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dawit Girma Buayu | Academic Portfolio</title>
-
 <meta name="description" content="Academic portfolio of Dawit Girma Buayu, Lecturer and Researcher in Water Resources Engineering at Wolkite University, Ethiopia.">
+
+<!-- PDF GENERATION LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 
 <style>
 :root {
     --primary: #163b65;
     --secondary: #245b91;
+    --green: #28744d;
     --light: #f3f6fa;
     --dark: #263445;
     --white: #ffffff;
@@ -58,7 +61,7 @@ nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 16px;
     margin: 0;
     padding: 0;
 }
@@ -78,6 +81,8 @@ nav a:hover {
     width: 90%;
     margin: auto;
 }
+
+/* PROFILE SECTION */
 
 .hero {
     background: white;
@@ -134,25 +139,30 @@ nav a:hover {
     background: var(--primary);
     color: white;
     padding: 12px 20px;
+    border: none;
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
     white-space: nowrap;
     min-height: 44px;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .button:hover {
     background: var(--secondary);
 }
 
-.button.secondary {
-    background: #28744d;
+.button.green {
+    background: var(--green);
 }
 
-.button.secondary:hover {
+.button.green:hover {
     background: #1d5c3b;
 }
+
+/* CONTENT SECTIONS */
 
 section {
     padding: 40px 0;
@@ -187,7 +197,7 @@ h3 {
     margin-top: 0;
 }
 
-ul.content-list {
+.content-list {
     padding-left: 22px;
 }
 
@@ -201,11 +211,7 @@ ul.content-list {
     border-bottom: none;
 }
 
-.publication a {
-    color: var(--secondary);
-    overflow-wrap: anywhere;
-}
-
+.publication a,
 .contact-link {
     color: var(--secondary);
     overflow-wrap: anywhere;
@@ -218,6 +224,8 @@ footer {
     padding: 22px 10px;
     font-size: 14px;
 }
+
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 700px) {
     nav {
@@ -250,20 +258,16 @@ footer {
         font-size: 22px;
     }
 }
-
-@media print {
-    header, .hero-buttons, footer {
-        display: none;
-    }
-}
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <header>
 <nav>
     <div class="logo">Dawit Girma Buayu</div>
+
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
@@ -286,6 +290,7 @@ footer {
          onerror="this.style.display='none'">
 
     <div class="hero-text">
+
         <h1>Dawit Girma Buayu</h1>
 
         <h2>Lecturer and Researcher | Water Resources Engineering</h2>
@@ -298,6 +303,7 @@ footer {
         </p>
 
         <div class="hero-buttons">
+
             <a class="button" href="#publications">
                 View Publications
             </a>
@@ -306,11 +312,12 @@ footer {
                 Contact Me
             </a>
 
-            <a class="button secondary"
-               href="files/Dawit_Girma_Buayu_CV.pdf"
-               download>
+            <button class="button green"
+                    type="button"
+                    onclick="generateCV()">
                 ⬇ Download CV (PDF)
-            </a>
+            </button>
+
         </div>
     </div>
 
@@ -321,6 +328,7 @@ footer {
 <!-- EDUCATION -->
 <section id="education">
 <div class="container">
+
 <h2 class="section-title">Education</h2>
 
 <div class="card">
@@ -339,6 +347,7 @@ footer {
 <!-- RESEARCH -->
 <section id="research">
 <div class="container">
+
 <h2 class="section-title">Research Interests</h2>
 
 <div class="card">
@@ -353,12 +362,14 @@ footer {
 <li>Applications of Artificial Intelligence in Water Resources Planning and Management</li>
 </ul>
 </div>
+
 </div>
 </section>
 
-<!-- ACADEMIC EXPERIENCE -->
+<!-- EXPERIENCE -->
 <section id="experience">
 <div class="container">
+
 <h2 class="section-title">Academic and Professional Experience</h2>
 
 <div class="card">
@@ -396,6 +407,7 @@ site supervision and technical problem-solving.
 <!-- SKILLS -->
 <section id="skills">
 <div class="container">
+
 <h2 class="section-title">Technical and Professional Skills</h2>
 
 <div class="card">
@@ -412,12 +424,14 @@ site supervision and technical problem-solving.
 <li>Technical Documentation and Problem-solving</li>
 </ul>
 </div>
+
 </div>
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
 <div class="container">
+
 <h2 class="section-title">Research Publications</h2>
 
 <div class="card">
@@ -472,8 +486,7 @@ site supervision and technical problem-solving.
 
 <div class="publication">
 <strong>9. MCDA Approach for Identification of Rainwater Harvesting Site in Drought Vulnerable Area of Genale Dawa River Basin, Southern Ethiopia.</strong>
-<p>Hydrospatial Analysis, 2025.</p>
-<p>DOI needs verification.</p>
+<p>Hydrospatial Analysis, 2025. DOI requires verification.</p>
 </div>
 
 </div>
@@ -483,9 +496,11 @@ site supervision and technical problem-solving.
 <!-- CONTACT -->
 <section id="contact">
 <div class="container">
+
 <h2 class="section-title">Contact</h2>
 
 <div class="card">
+
 <p><strong>Name:</strong> Dawit Girma Buayu</p>
 <p><strong>Institution:</strong> Wolkite University, Ethiopia</p>
 <p><strong>Position:</strong> Lecturer and Researcher</p>
@@ -519,6 +534,207 @@ github.com/dawitgirma09177
 <p>© 2026 Dawit Girma Buayu | Academic Portfolio</p>
 <p>Wolkite University, Ethiopia</p>
 </footer>
+
+<!-- AUTOMATIC CV PDF GENERATOR -->
+<script>
+function generateCV() {
+
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+        alert("The PDF library could not load. Please check your internet connection and try again.");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const left = 18;
+    const width = 174;
+    const pageHeight = 297;
+    const bottomMargin = 18;
+    let y = 20;
+
+    function checkPage(heightNeeded) {
+        if (y + heightNeeded > pageHeight - bottomMargin) {
+            pdf.addPage();
+            y = 20;
+        }
+    }
+
+    function heading(text) {
+        checkPage(14);
+        y += 4;
+        pdf.setFont("helvetica", "bold");
+        pdf.setFontSize(12);
+        pdf.setTextColor(22, 59, 101);
+        pdf.text(text, left, y);
+        y += 3;
+        pdf.setDrawColor(36, 91, 145);
+        pdf.line(left, y, 192, y);
+        y += 6;
+    }
+
+    function paragraph(text, size = 9) {
+        pdf.setFont("helvetica", "normal");
+        pdf.setFontSize(size);
+        pdf.setTextColor(40, 52, 69);
+
+        const lines = pdf.splitTextToSize(text, width);
+        const lineHeight = size * 0.48 + 1.5;
+
+        lines.forEach(line => {
+            checkPage(lineHeight);
+            pdf.text(line, left, y);
+            y += lineHeight;
+        });
+
+        y += 2;
+    }
+
+    function boldParagraph(title, detail) {
+        checkPage(14);
+        pdf.setFont("helvetica", "bold");
+        pdf.setFontSize(9);
+        pdf.setTextColor(38, 52, 69);
+
+        const titleLines = pdf.splitTextToSize(title, width);
+        titleLines.forEach(line => {
+            checkPage(5);
+            pdf.text(line, left, y);
+            y += 5;
+        });
+
+        if (detail) {
+            paragraph(detail, 8.5);
+        }
+    }
+
+    // NAME
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(20);
+    pdf.setTextColor(22, 59, 101);
+    pdf.text("DAWIT GIRMA BUAYU", left, y);
+    y += 8;
+
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(10);
+    pdf.setTextColor(36, 91, 145);
+    pdf.text("Lecturer and Researcher | Water Resources Engineering", left, y);
+    y += 7;
+
+    paragraph(
+        "Department of Civil Engineering, Wolkite University, Ethiopia\n" +
+        "Professional email: dawit.girma@wku.edu.et\n" +
+        "Alternative email: davegirma63@gmail.com\n" +
+        "Academic portfolio: https://dawitgirma09177.github.io",
+        8
+    );
+
+    heading("PROFESSIONAL PROFILE");
+    paragraph(
+        "Lecturer and researcher at Wolkite University, Ethiopia, with an M.Sc. " +
+        "in Civil Engineering (Hydraulic Engineering). Research and professional " +
+        "interests include hydrology, hydrological modelling, hydraulic engineering, " +
+        "water resources management, climate change and water resources, groundwater, " +
+        "flood risk management, irrigation and drainage engineering, GIS and remote " +
+        "sensing, and applications of artificial intelligence in water resources planning."
+    );
+
+    heading("EDUCATION");
+    boldParagraph(
+        "M.Sc. in Civil Engineering (Hydraulic Engineering)",
+        "Addis Ababa University, Ethiopia — 2021."
+    );
+    boldParagraph(
+        "B.Sc. in Hydraulic and Water Resources Engineering",
+        "Wollega University, Ethiopia — 2016."
+    );
+
+    heading("ACADEMIC APPOINTMENT");
+    boldParagraph(
+        "Lecturer and Researcher — Wolkite University, Ethiopia",
+        "September 14, 2017 – Present. Teaching and research in Hydraulic and Water Resources Engineering, Civil Engineering, and Construction Technology and Management (COTM)."
+    );
+
+    heading("PROFESSIONAL ENGINEERING EXPERIENCE");
+    boldParagraph(
+        "Part-time Site and Office Engineer — GMN Water Works Construction Plc.",
+        "March 01, 2022 – September 13, 2025."
+    );
+    boldParagraph(
+        "Part-time Site and Office Engineer — Etenesh Abebaw WWC",
+        "January 02, 2017 – February 05, 2022."
+    );
+    paragraph(
+        "Professional experience includes engineering documentation, design review, " +
+        "AutoCAD drawings, engineering layouts, design calculations, preparation of " +
+        "Bills of Quantities (BOQ), cost estimates, material take-offs, site supervision, " +
+        "quality control, construction management, technical problem-solving, quantity " +
+        "measurements, and coordination with contractors, subcontractors and suppliers."
+    );
+
+    heading("RESEARCH INTERESTS");
+
+    [
+        "Hydrology and Hydrological Modeling",
+        "Water Resources Management",
+        "Climate Change and Water Resources",
+        "Groundwater",
+        "Flood Risk Management",
+        "Irrigation and Drainage Engineering",
+        "GIS and Remote Sensing Applications",
+        "Applications of AI in Water Resources Planning and Management"
+    ].forEach(function(value) {
+        paragraph("• " + value, 9);
+    });
+
+    heading("TECHNICAL AND PROFESSIONAL SKILLS");
+    paragraph(
+        "Hydraulic and water resources engineering; hydrological analysis and modelling; " +
+        "GIS and remote sensing; AutoCAD drawings and engineering layouts; engineering " +
+        "design calculations; BOQ preparation; cost estimation; material take-offs; " +
+        "site supervision; quality control; construction management; technical documentation."
+    );
+
+    heading("RESEARCH PUBLICATIONS");
+
+    const publications = [
+        "Performance evaluation of high-resolution multiple satellite rainfall estimates for drought and flood monitoring in the Omo-Gibe Basin, Ethiopia. H2Open Journal, 2026. https://doi.org/10.1016/j.htopen.2026.100014",
+        "Geospatial mapping of groundwater potential zones using multi-criteria decision analysis and GIS fuzzy logic in Dabus Sub-Basin, western Ethiopia. Quaternary Science Advances, 2025. https://doi.org/10.1016/j.qsa.2025.100275",
+        "MCDA Approach for Identification of Rainwater Harvesting Site in Drought Vulnerable Area of Genale Dawa River Basin, Southern Ethiopia. Hydrospatial Analysis, 2025. DOI requires verification.",
+        "Identifying flood vulnerable and risk areas using the integration of analytical hierarchy process (AHP), GIS, and remote sensing: A case study of southern Oromia region. 2023. https://doi.org/10.1016/j.uclim.2023.101640",
+        "Site Suitability Analysis for Surface Irrigation using GIS, Remote Sensing, and Analytical Hierarchy Process (AHP) Integration in Wama Watershed, Western Ethiopia. Hydrospatial Analysis, 2022. https://doi.org/10.21523/gcj3.2022060104",
+        "Estimation of Soil Loss Rate Using RUSLE Model Integrated with GIS and Remote Sensing Techniques: The Case of Wama Watershed, Western Ethiopia. International Journal of Scientific Research and Innovative Studies, 2022. https://ijsrisjournal.com/index.php/ojsfiles/article/view/22",
+        "Identification of Groundwater Potential Zones Using AHP, GIS and RS Integration: A Case Study of Didessa Sub-Basin, Western Ethiopia. 2022. https://doi.org/10.21523/gcj1.2022060101",
+        "Evaluation and Bias correction of Tropical Applications of Meteorology using SATellite (TAMSAT) daily rainfall estimates over the data-scarce region of Southern Ethiopia. Journal of Civil Engineering Research & Technology, 2021. https://doi.org/10.47363/JCERT/2021(3)121",
+        "Evaluation of the performance of high-resolution rainfall products for stream flow Simulation. Journal of Civil & Environmental Engineering, 2021. https://doi.org/10.37421/2165-784X.2021.11.383"
+    ];
+
+    publications.forEach(function(publication, index) {
+        paragraph((index + 1) + ". " + publication, 8);
+    });
+
+    heading("REFERENCES");
+    paragraph("Professional references are available upon request.");
+
+    // PAGE NUMBERS
+    const totalPages = pdf.internal.getNumberOfPages();
+
+    for (let page = 1; page <= totalPages; page++) {
+        pdf.setPage(page);
+        pdf.setFont("helvetica", "normal");
+        pdf.setFontSize(8);
+        pdf.setTextColor(100, 100, 100);
+        pdf.text(
+            "Dawit Girma Buayu | Academic CV | Page " + page + " of " + totalPages,
+            18,
+            289
+        );
+    }
+
+    // DOWNLOAD THE GENERATED PDF
+    pdf.save("Dawit_Girma_Buayu_CV.pdf");
+}
+</script>
 
 </body>
 </html>
