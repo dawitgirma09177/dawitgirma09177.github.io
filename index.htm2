@@ -9,7 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+.credentials-note {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+    font-style: italic;
+    margin: 30px auto 15px;
+    padding: 15px;
+    border-top: 1px solid #e2e8f0;
+    max-width: 850px;
+}
 <style>
 :root {
   --primary: #123b63;
@@ -375,7 +384,21 @@ footer {
 </div>
 </div>
 </section>
+</section>
 
+<!-- Academic credentials note -->
+<p class="credentials-note">
+    Copies of academic credentials, transcripts, and professional certificates
+    are available upon request.
+</p>
+
+<footer>
+    <p>&copy; 2026 Dawit Girma Buayu. All Rights Reserved.</p>
+    <p>Lecturer and Researcher | Water Resources Engineering | Wolkite University, Ethiopia</p>
+</footer>
+
+</body>
+</html>
 <footer>
 <p>© 2026 Dawit Girma Buayu | Academic Portfolio</p>
 <p>Lecturer and Researcher | Water Resources Engineering | Wolkite University, Ethiopia</p>
