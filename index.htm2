@@ -216,8 +216,8 @@ footer {
   <img class="profile-photo" src="profile.jpg" alt="Dawit Girma Buayu">
   <div>
     <h1>Dawit Girma Buayu</h1>
-    <h2>Lecturer and Researcher | Water Resources Engineering</h2>
-    <p>Department of Civil Engineering, Wolkite University, Ethiopia. Researcher and engineering professional specializing in hydrology, hydraulic engineering, water resources management, GIS and remote sensing applications.</p>
+    <h2>Lecturer and Researcher | Hydraulic Engineering</h2>
+    <p>Department of Hydraulic and Water Resources Engineering, Wolkite University, Ethiopia. Researcher and engineering professional specializing in hydrology, hydraulic engineering, water resources management, GIS and remote sensing applications.</p>
     <div class="hero-buttons">
       <a class="btn" href="#publications">View Publications</a>
       <a class="btn outline" href="#contact">Contact Me</a>
